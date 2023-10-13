@@ -15,15 +15,29 @@ body {
   padding: 10px;
   margin-bottom: 20px;
 }
-
+/*Input section*/
 .input-section {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
 
+#frontInput, #backInput {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+/*end Input section*/
+
+/*Tabelle*/
 .data-table {
   width: 100%;
+}
+
+.table-header {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  /*cursor: pointer; */
 }
 
 .table-row {
@@ -33,17 +47,47 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
+.table-row.table-header .table-cell:first-child,
+.table-row.table-header .table-cell:nth-child(2) {
+  /*width: 5px;*/
+  /*height: 100px;*/
+  /*padding: 0 10px;*/
+  /*border: 5px solid red;*/
+  /*margin: 0 5%;*/
+
+  /*user-select: none; !* Verhindert das Auswählen des gesamten Inhalts der Zelle *!*/
+  /*cursor: default;*/
+
+
+  /*outline: 1px solid green;*/
+}
+
+
+
+/* Ändere den Mauszeiger nur, wenn er über den Front oder Back Zellen der ersten Zeile fährt */
+.table-row.table-header .table-cell:first-child:hover,
+.table-row.table-header .table-cell:nth-child(2):hover {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.table-row.table-header .table-cell:first-child:active,
+.table-row.table-header .table-cell:nth-child(2):active {
+  background-color: #ccc;
+
+}
+
+
+
 .table-cell {
   flex: 1;
   text-align: center;
 }
 
-.table-header {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  cursor: pointer;
-}
+
 
 .checkbox-label {
   margin-left: 10px;
 }
+
+/*end tabelle*/
