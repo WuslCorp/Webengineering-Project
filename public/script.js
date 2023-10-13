@@ -83,25 +83,28 @@ function renderTable() {
     });
 }
 
-let sortAsc = true; // Variable, um den Sortierstatus zu speichern
+let sortState = true; // Variable, um den Sortierstatus zu speichern
 
 function sortTable(column) {
     // Sortiere die Daten basierend auf der ausgewählten Spalte und dem Sortierstatus
+
+    // data.reverse();
+
     data.sort((a, b) => {
         const valueA = a[column].toLowerCase();
         const valueB = b[column].toLowerCase();
 
         if (valueA < valueB) {
-            return sortAsc ? -1 : 1; // Aufsteigende oder absteigende Sortierreihenfolge
+            return sortState ? -1 : 1; // Aufsteigende oder absteigende Sortierreihenfolge
         }
         if (valueA > valueB) {
-            return sortAsc ? 1 : -1; // Aufsteigende oder absteigende Sortierreihenfolge
+            return sortState ? 1 : -1; // Aufsteigende oder absteigende Sortierreihenfolge
         }
         return 0; // Gleichwertige Werte
     });
 
     // Ändere den Sortierstatus für den nächsten Klick
-    sortAsc = !sortAsc;
+    sortState = !sortState;
 
     // Rufe die Funktion zum Rendern der Tabelle auf
     renderTable();
