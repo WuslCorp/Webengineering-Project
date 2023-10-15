@@ -141,3 +141,12 @@ function filterTable() {
 }
 
 renderTable();
+
+
+function removeArros() {
+
+}
+
+function arrowTest() {
+    var textElement = document.getElementById()
+}
